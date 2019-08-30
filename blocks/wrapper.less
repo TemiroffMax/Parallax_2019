@@ -1,0 +1,116 @@
+// main: ../style.less
+
+.wrapper{
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 300px;
+}
+
+.parallax__group{
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  transform-style: preserve-3d;
+}
+
+.parallax__layer{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.sky{
+  background: url(img/sky.png) no-repeat center;
+  background-size: cover;
+  transform: translateZ(-600px) scale(3);
+  z-index: 1;
+}
+
+.bushes{
+  background: url(img/bushes.png) no-repeat center;
+  background-size: cover;
+  transform: translateZ(-525px) scale(2.75);
+  z-index: 2;
+}
+
+.water{
+  background: url(img/water.png) no-repeat center;
+  background-size: cover;
+  transform: translateZ(-403px) scale(2.333333333);
+  z-index: 3;
+}
+
+.people1{
+  background: url(img/people1.png) no-repeat center;
+  background-size: cover;
+  transform: translateZ(-205px) scale(1.677777777);
+  z-index: 4;
+}
+
+.people2{
+  background: url(img/people2.png) no-repeat center;
+  background-size: cover;
+  transform: translateZ(-125px) scale(1.4167);
+  z-index: 5;
+}
+.people3{
+  background: url(img/people3.png) no-repeat center;
+  background-size: cover;
+  transform: translateZ(0) scale(1);
+  z-index: 6;
+}
+
+.hero--text{
+  background: linear-gradient(
+    rgba(105, 211, 252, 0.25) 0%,
+    rgba(255, 116, 161, 0.25) 86%,
+    rgba(1, 0, 0, 0.25) 100%
+  );
+  background-size: cover;
+  transform: translateZ(0) scale(1);
+  z-index: 7;
+
+  h2{
+    font-size: 1.25rem;
+    position: absolute;
+    left: 2.5rem;
+    top: 2.5rem;
+  }
+
+  nav {
+    font-size: 0.75rem;
+    position: absolute;
+    right: 2.5rem;
+    top: 2.5rem;
+    display: flex;
+    align-items: center;
+
+    a {
+      margin-left: 2.5rem;
+      list-style-type: none;
+      float: left;
+      visibility: hidden;
+
+      &:nth-child(3){
+        visibility: visible;
+      }
+    }
+  }
+
+  
+}
+
+@media (min-width: 760px) {
+  .hero--text nav a{
+    visibility: visible;
+  }
+}
+
+@media (min-width: 1126px) {
+  .sky,.bushes,.water,.people1,.people2,.people3,.hero-text {
+    background-size: contain;
+  }
+}
